@@ -1,0 +1,44 @@
+<app-server></app-server>
+
+<h2 class="text-primary">String Interpolation</h2>
+<h3>{{serverStatus}}</h3>
+<hr>
+<hr>
+<h2 class="text-primary">Property Binding</h2>
+<h3>i can manipulate innerHTML and bind them with a Property</h3>
+<button type="button" class="btn btn-primary" [disabled]="disabled">{{disabled}}</button>
+<hr>
+<h2 class="text-primary">Event Binding</h2>
+
+Event binding is where we can bind our event like click , or keypress
+
+eg Adding a new Server to Servers
+<button type="button" class="btn btn-primary mx-2" (click)="onAddNewServer()">Add a server</button>
+<button type="button" class="btn btn-primary" (click)="onRemoveNewServer()">Remove a server</button>
+
+<h1>{{addNewServer}}</h1>
+<hr>
+<h2 class="text-primary">Event Binding adv. using $event</h2>
+
+Passing and Using Data With event binding <br>
+<label>Input Here:</label>
+<!-- $event gives us object of properties from which we exclude properties which we want -->
+<input type="text" (input)="onInput($event)"> <br>
+<label>Output here:</label>
+<p>{{Input}}</p>
+<p> it is not fetching the value of propery but instead after we set the value of
+    property or performing an (event)
+    then it is fetching </p>
+
+<hr>
+
+
+<h2 class="text-primary">Two Way Data Binding</h2>
+
+<p>here it is giving me the value of input which is <b><i>something</i></b> which means it is fetching from
+    the component to Dom and at the same time changing property as well which sums up to two way data binding also here
+    it takes the value of the previous input above and continues with it </p>
+<p>In short taking the value from component and displaying and using that value at the same time</p>
+<input type="text" [(ngModel)]="Input"> <br>
+Output here:
+<p>{{Input}}</p>
